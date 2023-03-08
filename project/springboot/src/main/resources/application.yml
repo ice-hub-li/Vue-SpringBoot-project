@@ -1,0 +1,68 @@
+server:
+#  服务器私网IP
+#  ip: 172.22.36.141
+  ip: localhost
+  port: 9090
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot-vue-02?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+#    url: jdbc:mysql://172.22.36.141:3306/springboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=false
+    username: root
+#    password: 123456
+    password: root
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  redis:
+    port: 6379
+    host: 127.0.0.1
+
+  mail:
+    # 配置 SMTP 服务器地址
+    host: smtp.163.com
+    # 发送者邮箱
+    username: ice_longli@163.com
+    # 配置密码，注意不是真正的密码，而是刚刚申请到的授权码
+    password: RYGMJQDLWSQEKZOQ
+    # 端口号465或587
+    port: 465
+    # 默认的邮件编码为UTF-8
+    default-encoding: UTF-8
+    # 配置SSL 加密工厂
+#    properties:
+#      mail:
+#        smtp:
+#          socketFactoryClass: javax.net.ssl.SSLSocketFactory
+#        #表示开启 DEBUG 模式，这样，邮件发送过程的日志会在控制台打印出来，方便排查错误
+#        debug: true
+    protocol: smtps
+
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled=true:
+
+files:
+  upload:
+#      path: /home/files/
+    path: E:/project/java/vue-springboot/files
+
+
+
+
+
